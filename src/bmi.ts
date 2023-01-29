@@ -38,9 +38,8 @@ export interface BmiOutput {
  * Takes a BmiInput object and return BmiOutput response
  */
 export default function bmi(input: BmiInput): BmiOutput {
-    let bmiCalc = input.weight / (input.height**2); 
+    let bmiCalc = Math.round(input.weight / (input.height**2)); 
     console.log("The Bmi calculation is:", bmiCalc); 
-    // TODO: implement me
     if (bmiCalc < 18.5) {
         return {status: BmiStatus.Underweight, bmi: bmiCalc}
     }
